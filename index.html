@@ -3,68 +3,56 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Minecraft-themed Counter</title>
-    <style>
-        @font-face {
-            font-family: 'Minecraft';
-            src: url('https://fonts.cdnfonts.com/s/36662/Minecraft.woff') format('woff');
-        }
-        body {
-            margin: 0;
-            padding: 0;
-            height: 100vh;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            background-color: #8B8B8B;
-            font-family: 'Minecraft', sans-serif;
-        }
-        .banner {
-            width: 100%;
-            height: 200px;
-            background-image: url('https://i.ibb.co/wQPKvBk/DALL-E-2023-06-06-14-50-39-A-Minecraft-themed-banner-with-pixelated-grass-blocks-trees-and-a-brig.png');
-            background-size: cover;
-            background-position: center;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-        }
-        #counter {
-            font-size: 48px;
-            color: white;
-            text-shadow: 2px 2px #000;
-            background-color: rgba(0, 0, 0, 0.5);
-            padding: 20px;
-            border: 4px solid #8b8b8b;
-            border-radius: 10px;
-        }
-    </style>
+    <title>Dupe4Lifes - Lifesteal Minecraft Server</title>
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="banner">
-        <div id="counter">0</div>
-    </div>
+    <header>
+        <nav>
+            <div class="logo">Dupe4Lifes</div>
+            <div class="nav-links">
+                <a href="index.html" class="active">Home</a>
+                <a href="about.html">About</a>
+                <a href="support.html">Support</a>
+                <a href="login.html">Login</a>
+            </div>
+            <div class="nav-buttons">
+                <button id="theme-toggle">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button id="menu-toggle" class="burger-menu">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </nav>
+    </header>
 
-    <script>
-        function animateCounter(target, duration) {
-            let start = 0;
-            const increment = target / (duration / 16);
-            const counter = document.getElementById('counter');
+    <main>
+        <section class="hero">
+            <h1>Welcome to Dupe4Lifes</h1>
+            <p>The Ultimate Lifesteal Minecraft Server Experience</p>
+            <div class="cta-buttons">
+                <button id="copy-ip">Copy IP</button>
+                <button id="join-discord">Join Discord</button>
+            </div>
+        </section>
 
-            function updateCounter() {
-                start += increment;
-                if (start < target) {
-                    counter.textContent = Math.floor(start).toLocaleString();
-                    requestAnimationFrame(updateCounter);
-                } else {
-                    counter.textContent = target.toLocaleString();
-                }
-            }
+        <section class="features">
+            <h2>Server Features</h2>
+            <ul>
+                <li>Lifesteal Gameplay</li>
+                <li>Custom Plugins</li>
+                <li>Active Community</li>
+                <li>Regular Events</li>
+            </ul>
+        </section>
+    </main>
 
-            updateCounter();
-        }
+    <footer>
+        <p>&copy; 2024 Dupe4Lifes. All rights reserved.</p>
+    </footer>
 
-        animateCounter(10000000000, 5000); // Animate to 10 billion over 5 seconds
-    </script>
+    <script src="js/script.js"></script>
 </body>
 </html>
