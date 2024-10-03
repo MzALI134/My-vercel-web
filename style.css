@@ -1,6 +1,7 @@
 :root {
     --primary-color: #2c3e50;
     --secondary-color: #3498db;
+    --accent-color: #e74c3c;
     --background-color: #ecf0f1;
     --text-color: #34495e;
 }
@@ -8,6 +9,7 @@
 body.dark-mode {
     --primary-color: #34495e;
     --secondary-color: #3498db;
+    --accent-color: #e74c3c;
     --background-color: #2c3e50;
     --text-color: #ecf0f1;
 }
@@ -19,7 +21,7 @@ body.dark-mode {
 }
 
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     background-color: var(--background-color);
     color: var(--text-color);
     line-height: 1.6;
@@ -28,12 +30,15 @@ body {
 header {
     background-color: var(--primary-color);
     padding: 1rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
 nav {
     display: flex;
     justify-content: space-between;
     align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
 }
 
 .logo {
@@ -46,6 +51,11 @@ nav {
     color: var(--background-color);
     text-decoration: none;
     margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-links a:hover {
+    color: var(--secondary-color);
 }
 
 .nav-links a.active {
@@ -59,6 +69,11 @@ nav {
     font-size: 1.2rem;
     cursor: pointer;
     margin-left: 1rem;
+    transition: color 0.3s ease;
+}
+
+.nav-buttons button:hover {
+    color: var(--secondary-color);
 }
 
 .burger-menu {
@@ -66,14 +81,26 @@ nav {
 }
 
 main {
-    padding: 2rem;
     max-width: 1200px;
     margin: 0 auto;
+    padding: 2rem;
 }
 
 .hero {
+    background-image: url('/images/background.jpg');
+    background-size: cover;
+    background-position: center;
+    color: white;
     text-align: center;
+    padding: 4rem 2rem;
+    border-radius: 10px;
     margin-bottom: 2rem;
+}
+
+.hero-content {
+    background-color: rgba(0, 0, 0, 0.6);
+    padding: 2rem;
+    border-radius: 10px;
 }
 
 h1 {
@@ -87,30 +114,57 @@ h1 {
 
 button {
     background-color: var(--secondary-color);
-    color: var(--background-color);
+    color: white;
     border: none;
     padding: 0.5rem 1rem;
     font-size: 1rem;
     cursor: pointer;
     margin: 0.5rem;
+    border-radius: 5px;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: var(--accent-color);
 }
 
 .features {
     background-color: var(--primary-color);
     color: var(--background-color);
     padding: 2rem;
-    border-radius: 5px;
+    border-radius: 10px;
 }
 
 .features h2 {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.feature-item {
+    text-align: center;
+    padding: 1rem;
+    background-color: rgba(255, 255, 255, 0.1);
+    border-radius: 10px;
+    transition: transform 0.3s ease;
+}
+
+.feature-item:hover {
+    transform: translateY(-5px);
+}
+
+.feature-item i {
+    font-size: 2rem;
+    color: var(--secondary-color);
     margin-bottom: 1rem;
 }
 
-.features ul {
-    list-style-type: none;
-}
-
-.features li {
+.feature-item h3 {
     margin-bottom: 0.5rem;
 }
 
@@ -119,9 +173,7 @@ footer {
     color: var(--background-color);
     text-align: center;
     padding: 1rem;
-    position: absolute;
-    bottom: 0;
-    width: 100%;
+    margin-top: 2rem;
 }
 
 @media (max-width: 768px) {
